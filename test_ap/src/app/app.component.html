@@ -1,0 +1,37 @@
+<head>
+  <link rel="preconnect" href="https://picsum.photos">
+</head>
+<h1 class="title"> {{title}}</h1>
+<div class="mainContainer">
+  <div class="search">
+    <input class="searchField" type="text" [(ngModel)]="searchInputValue" />
+    <button class="searchButton" (click)="search(searchInputValue)">Search</button>
+    <button class="resetButton" (click)="resetSearch()">Reset search</button>
+  </div>
+
+  <div class="alignCenter" *ngIf="searchActivated && !showErrorMessage">
+    <div class="searchAlbumContainer">
+      <div class="photoContainer">
+        <img ngSrc="{{searchResult[0].photo}}" onerror="this.src='./assets/alt-photo1.svg';" width="400" height="400" priority>
+        <div class="textContainer">
+          <p>{{searchResult[0].id}}</p>
+          <p>{{searchResult[0].text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alignCenter textError" *ngIf="showErrorMessage">No se ha encontrado la imagen , por favor busque otra o dale a Reset para volver a ver todas las imágenes</div>
+
+  <div class="alignCenter" *ngIf="!searchActivated">
+    <div class="albumContainer" *ngFor="let item of album$ | async">
+      <div class="photoContainer">
+        <img ngSrc="{{item.photo}}" onerror="this.src='./assets/alt-photo.svg';" width="400" height="400" priority>
+        <div class="textContainer">
+          <p>{{item.id}}</p>
+          <p>{{item.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

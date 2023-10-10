@@ -1,0 +1,63 @@
+ .title {
+     text-align: center;
+ }
+
+ .mainContainer {
+     padding: 4rem;
+     margin-top: 5rem;
+ }
+
+ .albumContainer, .searchAlbumContainer {
+     margin: .30rem;
+     display: inline-flex;
+ }
+
+ .photoContainer {
+     border: 1px solid rgba($color: #000000, $alpha: 1.0);
+     -webkit-border-radius: 0 0 10px 10px;
+     -moz-border-radius: 0 0 10px 10px;
+     border-radius: 0 0 10px 10px;
+ }
+
+ .textContainer {
+     display: flex;
+     padding: 1rem;
+     justify-content: space-between;
+ }
+
+ .alignCenter {
+     text-align: center;
+
+     &.textError {
+         color: rgba($color: #ed5050, $alpha: 1.0);
+     }
+ }
+
+ .searchButton, .resetButton {
+     cursor: pointer;
+     -webkit-border-radius: 10px 10px 10px 10px;
+     -moz-border-radius: 10px 10px 10px 10px;
+     border-radius: 10px 10px 10px 10px;
+     margin: .10rem;
+ }
+
+ .buttons:hover {
+     cursor: pointer;
+ }
+
+ .search {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 1rem;
+ }
+
+ .searchField {
+     margin-right: .20rem;
+ }
+
+ @media screen and (max-width: 530px) {
+     .mainContainer {
+         padding: 0;
+
+     }
+ }
